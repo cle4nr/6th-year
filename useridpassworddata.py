@@ -52,7 +52,7 @@ if menukey == 1:
         data.append(line.split(', '))
 
     a=open('Passwords.csv','a')
-        
+    f.readline()
     while choosing2:
         newuser = input('Enter a new User ID: ')
         if newuser in [user[0] for user in data]: #list comprehension to get list of users from list of users and passwords(data) 
@@ -71,14 +71,35 @@ It should include one special character !, £, $, €, %, &, *, #
         passw = input('Enter a valid password: ')
         if validpassword(passw):
             choosing3 = False
-        
-                    
-        
-            
-                        
+                         
     a.write(newuser+', '+passw+'\n')
     a.close()
+    
+if menukey == 2:
+    choosing4 = True
+    f=open('Passwords.csv','r')
+    f.readline()
+    data = []
+    for line in f:
+        data.append(line.split(', '))
+    
+    while choosing4:
+        olduser = input('Enter your UserID: ')
+        if olduser in [user[0] for user in data]:
+            passw = input('Enter a valid password: ')
+            if validpassword(passw):
+                choosing4 = False
+                for user in data:
+                    if olduser == user[0]:
+                        user[1] = passw
+                a=open('Passwords.csv','a') #change to write mode to overwrite old password
+                a.write(olduser+', '+passw+'\n')
+                a.close()
+        else:
+            print('UserID not in database, please try again.')
             
+            
+    
         
     
         
