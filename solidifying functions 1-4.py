@@ -24,6 +24,11 @@ def areacircle(diam):
 def rectanglearea(w,h):
     area = w * h
     return area
-mywidth = 20
-myheight = 10
-print(rectanglearea(mywidth,myheight))
+#mywidth = 20
+#myheight = 10
+#print(rectanglearea(mywidth,myheight))
+
+def middlechar(word):
+    middlechar = len(word) // 2
+    return word[middlechar]
+#print(middlechar('joker'))

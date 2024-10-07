@@ -33,7 +33,8 @@ while bigchoosing:
     valid = [1,2,3,4]
     choosing = True
     while choosing:
-        menukey = int(input('''1) Create a new User ID
+        menukey = int(input('''
+1) Create a new User ID
 2) Change a password
 3) Display all user IDs
 4) Quit
@@ -109,8 +110,7 @@ It should include one special character !, £, $, €, %, &, *, #
         print()
     if menukey == 4:
         bigchoosing = False
-            
-    
+        
         
     
         
