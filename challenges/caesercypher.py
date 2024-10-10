@@ -3,7 +3,7 @@ from string import ascii_lowercase
 for x in riddle:
     if x.isalpha():
         i = ascii_lowercase.find(x)
-        i = (i + 3) % 26
+        i = (i + 2) % 26
         letter = ascii_lowercase[i]
         print(letter,end='')
     else:
