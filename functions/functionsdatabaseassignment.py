@@ -51,10 +51,6 @@ while bigchoosing:
         if menukey in valid:
             choosing = False
 
-
-        
-
-
     choosing2 = True
     if menukey == 1:
         f=open('Passwords.csv','r')
