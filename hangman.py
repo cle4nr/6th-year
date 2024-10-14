@@ -19,7 +19,7 @@ while wordnotguessed:
             wordnotguessed = False
     else:
         correctletters.append(letterw)
-        print(f'{letterw} is in word, you have {lives} lives left')
+        print(f'{letterw} is in word')
         correctst = sorted(correctletters)
         if correctst == sortedwt:
             wordnotguessed = False
