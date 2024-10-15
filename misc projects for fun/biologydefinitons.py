@@ -47,6 +47,6 @@ spell = int(input('How many spelling errors did you make? '))
 Score = Score + spell
 print(f'You got {Score} out of 24.')
 percent = Score * 4.167
-print(percent,'%')
+print(f'{percent:.0f}%')
 
         
