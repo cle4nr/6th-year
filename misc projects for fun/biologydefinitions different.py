@@ -44,7 +44,7 @@ for x in range(len(biodic)):
         else:
             Score += 1
             print(f'Correct, {Score = }\n')
-        del biodic[randitems[0]]
+    del biodic[randitems[0]]
 print('\nIncorrect answers:')
 for x in range(len(inc)):
     print(f'{inc[x]}')
