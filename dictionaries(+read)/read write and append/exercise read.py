@@ -2,12 +2,11 @@ def averagecals(calories):
     sumcal = sum(calories)
     avgcal = sum(calories) / len(calories)
     return avgcal
-#get percentage difference of 
+
 #|V1−V2|[(V1+V2)2]×100=? percentage difference formula
 def percentdiff(v1,v2):
-    no100 = abs(v1-v2) / ((v1+v2) / 2) 
-    diff = no100 * 100
-    return diff
+    return (abs(v1-v2) / ((v1+v2) / 2)) * 100
+    
     
     
     
@@ -62,17 +61,29 @@ print()
 print('----------------------')
 print(f"Percentage difference:")
 print('----------------------')
-print(f"{'Duration':7s}   {'Avgtop20-and-overall-average':15s}   {'Avgbot20 and overall average':15s}")
+print(f"{'Duration':7s}   {'Avgtop20-and-overall-average':15s}   {'Avgbot20-and-overall-average':15s}")
 print(f"{'45':^8}  	 {percentdiff(avgtop20_45,averagecals(data[45])):10.2f}%   			{percentdiff(avgbot20_45,averagecals(data[45])):10.2f}%")
 print(f"{'60':^8}  	 {percentdiff(avgtop20_60,averagecals(data[60])):10.2f}%   			{percentdiff(avgbot20_60,averagecals(data[60])):10.2f}%")
 print()
-choosing = True
-while choosing:
+
+choosingdur = True
+while choosingdur:
     userdur = int(input('Enter a valid duration of your own session: '))
     if userdur in data:
-        choosing = False
+        choosingdur = False
     else:
         print('Your duration is not valid, Try again.')
+        print('Valid durations: ',end = '')
+        for key in data.keys():
+            print(f"{key}, ",end='')
+        print('\n')
+usercal = float(input('Enter the calories burnt to one decimal place: '))
+print('--------------------------------------------------------------------')
+print(f"{'Duration':10s} {'Your-Calories':10s}    {'Duration-Average':10s}    {'Percent-Difference'}")
+print(f"{userdur:5} {usercal:14.1f}   {round(averagecals(data[userdur]),1):15}   {percentdiff(usercal,round(averagecals(data[userdur]))):17.1f}%")
+
+        
+
 
 
 
