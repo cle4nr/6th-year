@@ -34,22 +34,21 @@ for x in range(len(biodic)):
         Score += 1
         print(f'Correct, {Score = }')        
     else:
-        yn = input('Correct y/n?')
+        print('Answer:',randitems[1])
+        yn = input('Correct y/n?:	')
         if yn == 'n':
-            print(f'False, {Score = }')
+            print(f'False, {Score = }\n')
             inc.append(randitems[1])
-            print('Answer:',randitems[1])
+            
             print()
         else:
             Score += 1
-            print(f'Correct, {Score = }')
-    del biodic[randitems[1]]   
+            print(f'Correct, {Score = }\n')
+        del biodic[randitems[0]]
 print('\nIncorrect answers:')
 for x in range(len(inc)):
     print(f'{inc[x]}')
 print()
-spell = int(input('How many spelling errors did you make? '))
-Score = Score + spell
 print(f'You got {Score} out of 24.')
 percent = Score * 4.167
 print(f'{percent:.0f}%')

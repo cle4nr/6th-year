@@ -54,15 +54,25 @@ avgtop20_45 = averagecals(sort45[-20:])
 avgbot20_60 = averagecals(sort60[:20])
 avgtop20_60 = averagecals(sort60[-20:]) #wrong
 print()
+print()
 print(f"{'Duration':7s}   {'AvgTop20-Cals':7s}   {'AvgBot20-Cals':7s}   {'Overall Average':7s}")
 print(f"{'45':^8} {avgtop20_45:10.1f}  {avgbot20_45:15.1f}{averagecals(sorted(data[45])):17.1f}")  
 print(f"{'60':^8} {avgtop20_60:10.1f}  {avgbot20_60:15.1f}{averagecals(sorted(data[60])):17.1f}")
-print(percentdiff(avgtop20_45,averagecals(data[45])))
-
-#get percentage difference of 
-#|V1−V2|[(V1+V2)2]×100=? percentage difference formula
-
-
+print()
+print('----------------------')
+print(f"Percentage difference:")
+print('----------------------')
+print(f"{'Duration':7s}   {'Avgtop20-and-overall-average':15s}   {'Avgbot20 and overall average':15s}")
+print(f"{'45':^8}  	 {percentdiff(avgtop20_45,averagecals(data[45])):10.2f}%   			{percentdiff(avgbot20_45,averagecals(data[45])):10.2f}%")
+print(f"{'60':^8}  	 {percentdiff(avgtop20_60,averagecals(data[60])):10.2f}%   			{percentdiff(avgbot20_60,averagecals(data[60])):10.2f}%")
+print()
+choosing = True
+while choosing:
+    userdur = int(input('Enter a valid duration of your own session: '))
+    if userdur in data:
+        choosing = False
+    else:
+        print('Your duration is not valid, Try again.')
 
 
 
