@@ -24,3 +24,5 @@ ul{
 
 within html file, create an id with id = "..." within the opening tag of an element
 within css file, use a # to reference the id, now you can edit the style of this one element with id using {}
+
+within opening tag write class ="example", this can be referenced by .example

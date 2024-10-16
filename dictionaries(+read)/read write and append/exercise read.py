@@ -2,7 +2,15 @@ def averagecals(calories):
     sumcal = sum(calories)
     avgcal = sum(calories) / len(calories)
     return avgcal
-
+#get percentage difference of 
+#|V1−V2|[(V1+V2)2]×100=? percentage difference formula
+def percentdiff(v1,v2):
+    no100 = abs(v1-v2) / ((v1+v2) / 2) 
+    diff = no100 * 100
+    return diff
+    
+    
+    
 f = open('Exercise.csv', 'r') #open in read mode
 head = f.readline() #removes header
 nowhitespace = [] #empty list
@@ -37,22 +45,24 @@ for duration in sorted(data):
         
 #for types 45 and 60 show average of top 20 and bottom 20
     #compare values to eachother and get percentage difference
+    
+sort45 = sorted(data[45])
+sort60 = sorted(data[60])
 
-avgbot20_45 = averagecals(sorted(data[45][:20]))
-avgtop20_45 = averagecals(sorted(data[45][-20:]))
-avgbot20_60 = averagecals(sorted(data[60][:20]))
-avgtop20_60 = averagecals(sorted(data[60][-20:]))
+avgbot20_45 = averagecals(sort45[:20])
+avgtop20_45 = averagecals(sort45[-20:])
+avgbot20_60 = averagecals(sort60[:20])
+avgtop20_60 = averagecals(sort60[-20:]) #wrong
 print()
 print(f"{'Duration':7s}   {'AvgTop20-Cals':7s}   {'AvgBot20-Cals':7s}   {'Overall Average':7s}")
-print(f"{'45':^8}{avgtop20_45:10.1f}  {avgbot20_45:15.1f}   {averagecals(sorted(data[45])):17.1f}")  #fix centring with cormac at home
-print(f"{'60':^8}{avgtop20_60:10.1f}  {avgbot20_60:15.1f}   {averagecals(sorted(data[60])):17.1f}")  
+print(f"{'45':^8} {avgtop20_45:10.1f}  {avgbot20_45:15.1f}{averagecals(sorted(data[45])):17.1f}")  
+print(f"{'60':^8} {avgtop20_60:10.1f}  {avgbot20_60:15.1f}{averagecals(sorted(data[60])):17.1f}")
+print(percentdiff(avgtop20_45,averagecals(data[45])))
 
-     
-    
-# print(f'\nAverage top 20, Duration 45: {avgtop20_45:.1f}')
-# print(f'Average bottom 20, Duration 45: {avgbot20_45:.1f}')
-# print(f'Average top 20, Duration 45: {avgtop20_60:.1f}')
-# print(f'Average bottom 20, Duration 45: {avgbot20_60:.1f}')
+#get percentage difference of 
+#|V1−V2|[(V1+V2)2]×100=? percentage difference formula
+
+
 
 
 
