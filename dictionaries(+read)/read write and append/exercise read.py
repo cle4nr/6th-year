@@ -36,7 +36,7 @@ for i in range(len(nowhitespace)):
     else:
         data[int(nowhitespace[i][0])].append(float(nowhitespace[i][3])) #dictionary is only taking last piece of data in file, not all
 print()
-print(f"{'Duration':10s} {'Average Calories':10s}")
+print(f"{'Duration(m)':10s} {'Average Calories':10s}")
 for duration in sorted(data):
     print(f"{duration:^10}{averagecals(data[duration]):10.1f}") #:.1f puts float to 1 decimal place, :10 makes it max 10 digits long(fills rest with white space)
         
@@ -54,16 +54,16 @@ avgbot20_60 = averagecals(sort60[:20])
 avgtop20_60 = averagecals(sort60[-20:]) #wrong
 print()
 print()
-print(f"{'Duration':7s}   {'AvgTop20-Cals':7s}   {'AvgBot20-Cals':7s}   {'Overall Average':7s}")
-print(f"{'45':^8} {avgtop20_45:10.1f}  {avgbot20_45:15.1f}{averagecals(sorted(data[45])):17.1f}")  
-print(f"{'60':^8} {avgtop20_60:10.1f}  {avgbot20_60:15.1f}{averagecals(sorted(data[60])):17.1f}")
+print(f"{'Duration(m)':7s}   {'AvgTop20-Cals':7s}   {'AvgBot20-Cals':7s}   {'Overall Average':7s}")
+print(f"{'45m':^8} {avgtop20_45:10.1f}  {avgbot20_45:15.1f}{averagecals(sorted(data[45])):17.1f}")  
+print(f"{'60m':^8} {avgtop20_60:10.1f}  {avgbot20_60:15.1f}{averagecals(sorted(data[60])):17.1f}")
 print()
 print('----------------------')
 print(f"Percentage difference:")
 print('----------------------')
-print(f"{'Duration':7s}   {'Avgtop20-and-overall-average':15s}   {'Avgbot20-and-overall-average':15s}")
-print(f"{'45':^8}  	 {percentdiff(avgtop20_45,averagecals(data[45])):10.2f}%   			{percentdiff(avgbot20_45,averagecals(data[45])):10.2f}%")
-print(f"{'60':^8}  	 {percentdiff(avgtop20_60,averagecals(data[60])):10.2f}%   			{percentdiff(avgbot20_60,averagecals(data[60])):10.2f}%")
+print(f"{'Duration(m)':7s}   {'Avgtop20-and-overall-average':15s}   {'Avgbot20-and-overall-average':15s}")
+print(f"{'45m':^8}  	 {percentdiff(avgtop20_45,averagecals(data[45])):10.2f}%   			{percentdiff(avgbot20_45,averagecals(data[45])):10.2f}%")
+print(f"{'60m':^8}  	 {percentdiff(avgtop20_60,averagecals(data[60])):10.2f}%   			{percentdiff(avgbot20_60,averagecals(data[60])):10.2f}%")
 print()
 
 choosingdur = True
